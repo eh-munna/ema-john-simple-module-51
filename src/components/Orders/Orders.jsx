@@ -1,7 +1,20 @@
 import React from 'react';
+import Cart from '../Cart/Cart';
+import { useLoaderData } from 'react-router-dom';
 
 const Orders = () => {
-  return <div>Order page</div>;
+  const products = useLoaderData();
+  console.log(products);
+  return (
+    <div className="shop-container">
+      <div className="products-container">
+        Total products : {products.length}
+      </div>
+      <div className="cart-container">
+        <Cart cart={[]}></Cart>
+      </div>
+    </div>
+  );
 };
 
 export default Orders;
