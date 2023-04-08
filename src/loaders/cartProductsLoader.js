@@ -9,7 +9,6 @@ const cartProductsLoader = async () => {
   const storedCart = getShoppingCart();
   const savedCart = [];
   for (const id in storedCart) {
-    console.log(storedCart);
     const addedProduct = products.find((product) => product.id === id);
     if (addedProduct) {
       const quantity = storedCart[id];

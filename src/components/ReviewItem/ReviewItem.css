@@ -1,0 +1,17 @@
+.review-item {
+  border: 1px solid red;
+  padding: 5px;
+  border-radius: 8px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.review-item img {
+  max-width: 91px;
+  max-height: 91px;
+}
+
+.review-item h5 span {
+  color: orange;
+}
