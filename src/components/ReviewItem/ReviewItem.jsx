@@ -4,6 +4,7 @@ import { TrashIcon } from '@heroicons/react/24/solid';
 import './ReviewItem.css';
 const ReviewItem = ({ product, removeItem }) => {
   const { id, img, price, name, shipping, quantity } = product;
+
   return (
     <div className="review-item">
       <div className="review-img">
@@ -22,8 +23,11 @@ const ReviewItem = ({ product, removeItem }) => {
         </h5>
       </div>
       <div className="review-del">
-        <button onClick={() => removeItem(id)} className="">
-          <TrashIcon className="flex justify-center items-center w-6 h-6 text-blue-500" />
+        <button
+          onClick={() => removeItem(id)}
+          className="bg-rose-100 w-10 flex flex-col justify-center items-center rounded-full"
+        >
+          <TrashIcon className="flex justify-center items-center w-5 h-5 text-rose-400" />
         </button>
       </div>
     </div>
