@@ -7,7 +7,12 @@ import {
 import Cart from '../Cart/Cart';
 import Product from '../Product/Product';
 import './Shop.css';
-
+import {
+  ArrowRightIcon,
+  CreditCardIcon,
+  TrashIcon,
+} from '@heroicons/react/24/solid';
+import { Link } from 'react-router-dom';
 const Shop = () => {
   const [products, setProducts] = useState([]);
   const [cart, setCart] = useState([]);
@@ -76,7 +81,14 @@ const Shop = () => {
       </div>
 
       <div className="cart-container">
-        <Cart cart={cart} clearCart={clearCart}></Cart>
+        <Cart cart={cart} clearCart={clearCart}>
+          <Link to="/orders">
+            <button className="my-2 bg-slate-100 text-orange-500 rounded-md gap-3 w-full justify-center flex items-center">
+              <span className="font-semibold">Review Orders </span>
+              <ArrowRightIcon className="w-5 h-5 text-orange-500 " />
+            </button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

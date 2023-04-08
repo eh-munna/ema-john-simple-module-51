@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
 import Cart from '../Cart/Cart';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import ReviewItem from '../ReviewItem/ReviewItem';
 import './Orders.css';
 import { removeFromDb, deleteShoppingCart } from '../../utilities/fakedb';
-
+import {
+  ArrowRightIcon,
+  CreditCardIcon,
+  TrashIcon,
+} from '@heroicons/react/24/solid';
 const Orders = () => {
   const savedCart = useLoaderData();
   const [cart, setCart] = useState(savedCart);
@@ -32,7 +36,14 @@ const Orders = () => {
         ))}
       </div>
       <div className="cart-container">
-        <Cart cart={cart} clearCart={clearCart}></Cart>
+        <Cart cart={cart} clearCart={clearCart}>
+          <Link to="/checkout">
+            <button className="my-2 bg-slate-100 text-orange-500 rounded-md gap-3 w-full justify-center flex items-center">
+              <span className="font-semibold">Proceed Checkout </span>
+              <CreditCardIcon className="w-5 h-5 text-orange-500 " />
+            </button>
+          </Link>
+        </Cart>
       </div>
     </div>
   );

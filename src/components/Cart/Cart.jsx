@@ -2,7 +2,7 @@ import React from 'react';
 import './Cart.css';
 import { CreditCardIcon, TrashIcon } from '@heroicons/react/24/solid';
 
-const Cart = ({ cart, clearCart }) => {
+const Cart = ({ cart, clearCart, children }) => {
   // const cart = props.cart; // option 1
   // const {cart} = props; // option 2
 
@@ -44,10 +44,7 @@ const Cart = ({ cart, clearCart }) => {
         <TrashIcon className="w-5 h-5 text-rose-500 " />
       </button>
 
-      <button className="my-2 bg-slate-100 text-orange-500 rounded-md gap-3 w-full justify-center flex items-center">
-        <span className="font-semibold">Proceed to Checkout </span>
-        <CreditCardIcon className="w-5 h-5 text-orange-500 " />
-      </button>
+      {children}
     </div>
   );
 };
