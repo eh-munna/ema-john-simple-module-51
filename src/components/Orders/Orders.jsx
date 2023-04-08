@@ -3,15 +3,12 @@ import Cart from '../Cart/Cart';
 import { useLoaderData } from 'react-router-dom';
 
 const Orders = () => {
-  const products = useLoaderData();
-  console.log(products);
+  const cart = useLoaderData();
   return (
     <div className="shop-container">
-      <div className="products-container">
-        Total products : {products.length}
-      </div>
+      <div className="products-container">Total products : {cart.length}</div>
       <div className="cart-container">
-        <Cart cart={[]}></Cart>
+        <Cart cart={cart}></Cart>
       </div>
     </div>
   );
