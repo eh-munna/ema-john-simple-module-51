@@ -3,8 +3,17 @@
   padding: 5px;
   border-radius: 8px;
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   align-items: center;
+}
+
+.review-info {
+  padding-left: 15px;
+  flex-grow: 1;
+}
+
+.review-info h5 {
+  margin: 2px 0;
 }
 
 .review-item img {
